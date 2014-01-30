@@ -84,7 +84,7 @@ public class NapakalakiView extends javax.swing.JFrame {
                 playerViewPropertyChange(evt);
             }
         });
-        getContentPane().add(playerView, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 520));
+        getContentPane().add(playerView, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 550));
 
         btCombat.setText("Combatir");
         btCombat.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +142,7 @@ public class NapakalakiView extends javax.swing.JFrame {
         this.setNapakalaki(napakalakiModel);
 
     }//GEN-LAST:event_btNextTurnActionPerformed
-
+    
     private void playerViewPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_playerViewPropertyChange
         // TODO add your handling code here
     }//GEN-LAST:event_playerViewPropertyChange
