@@ -1,4 +1,4 @@
-package napakalaki;
+
 
 /*  
  *  Programación y diseño orientado a objetos
@@ -10,6 +10,7 @@ package napakalaki;
  * 
  */
 
+package napakalaki;
 
 import gui.*;
 import java.util.ArrayList;
