@@ -5,7 +5,6 @@
  *  2013 © Copyleft - All Wrongs Reserved
  *
  *  Ernesto Serrano <erseco@correo.ugr.es>
- *  Noureddine El Alaoui <nourdine@correo.ugr.es>
  *
  *  NOTA: Esta es una implementación del dado para integrarla como un control
  *  en el formulario pero actualmente no se está utilizando

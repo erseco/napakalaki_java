@@ -5,7 +5,6 @@
  *  2013 © Copyleft - All Wrongs Reserved
  *
  *  Ernesto Serrano <erseco@correo.ugr.es>
- *  Noureddine El Alaoui <nourdine@correo.ugr.es>
  * 
  */
 package gui;
@@ -13,6 +12,7 @@ package gui;
 import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import napakalaki.Player;
 import napakalaki.*;
@@ -119,6 +119,7 @@ public class PlayerView extends javax.swing.JPanel {
         cultistView = new gui.CultistView();
         jScrollPane = new javax.swing.JScrollPane();
         hiddenTreasures = new javax.swing.JPanel();
+        btMakePresent = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder("Jugador: Nombre Nivel: 0"));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -163,6 +164,14 @@ public class PlayerView extends javax.swing.JPanel {
         jScrollPane.setViewportView(hiddenTreasures);
 
         add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 670, 250));
+
+        btMakePresent.setText("Regalar Tesoro");
+        btMakePresent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMakePresentActionPerformed(evt);
+            }
+        });
+        add(btMakePresent, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 510, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btDiscardTreasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDiscardTreasureActionPerformed
@@ -212,9 +221,41 @@ public class PlayerView extends javax.swing.JPanel {
         this.napakalakiView.checkPendingBadStuff();
 
     }//GEN-LAST:event_btBuyLevelsActionPerformed
+
+    private void btMakePresentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMakePresentActionPerformed
+       
+        //Declaramos variables
+        String result = "";
+                
+        //Cogemos el primer tesoro seleccionado
+        ArrayList<Treasure> selHidden = getSelectedTreasures(hiddenTreasures);        
+        
+        if (selHidden.size() > 0) {
+        
+            //Seleccionamos el primero de los seleccioandos
+            Treasure t = selHidden.get(0);
+        
+            //Hacemos el regalo
+            result =  this.napakalakiModel.makePresent(t);
+        
+           
+           
+        } else {
+        
+            //Mostramos una advertencia
+            result = "Debe seleccionar al menos un tesoro";
+        
+        }
+        
+        //Mostramos el mensaje
+        JOptionPane.showMessageDialog(null, result);
+        
+    }//GEN-LAST:event_btMakePresentActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btBuyLevels;
     private javax.swing.JButton btDiscardTreasure;
+    private javax.swing.JButton btMakePresent;
     private javax.swing.JButton btMakeVisible;
     private gui.CultistView cultistView;
     private javax.swing.JPanel hiddenTreasures;

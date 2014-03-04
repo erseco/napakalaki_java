@@ -5,7 +5,6 @@
  *  2013 © Copyleft - All Wrongs Reserved
  *
  *  Ernesto Serrano <erseco@correo.ugr.es>
- *  Noureddine El Alaoui <nourdine@correo.ugr.es>
  * 
  */
 package napakalaki;
@@ -68,5 +67,15 @@ public class CultistPlayer extends Player {
     
         return this.myCultistCard;
     }
+    
+    
+    //EXAMEN
+    @Override
+    public String receivePresent(Treasure t) {
+
+        //Rechazamos el tesoro
+        return "Mi secta me impide aceptar regalos";
+    }
+    //FIN EXAMEN
     
 }

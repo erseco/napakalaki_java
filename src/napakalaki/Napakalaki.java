@@ -5,7 +5,6 @@
  *  2013 © Copyleft - All Wrongs Reserved
  *
  *  Ernesto Serrano <erseco@correo.ugr.es>
- *  Noureddine El Alaoui <nourdine@correo.ugr.es>
  * 
  */
 package napakalaki;
@@ -264,4 +263,49 @@ public class Napakalaki {
         return result == CombatResult.WinAndWinGame;
 
     }
+    
+    //EXAMEN
+    public String makePresent(Treasure t) {
+        
+        //Declaramos variables
+        String result = "";
+        Player playerReceiver = null;
+    
+        //Recorremos los jugadores
+        for (Player pl : this.players) {
+        
+            //Nos saltamso el current player
+            if (!pl.equals(this.currentPlayer)) {
+            
+                //Si no tiene nada, lo asignamos
+                if (playerReceiver == null) {
+                
+                    playerReceiver = pl;
+                
+                //Si tiene menor nivel que el asignado previamente, lo asignamos
+                } else if (pl.getLevels() < playerReceiver.getLevels()) {
+               
+                    playerReceiver = pl;                
+                    
+                }
+            
+            }
+            
+        }
+        
+        //Comprobamos que hayamos conseguido un player
+        if (playerReceiver != null) {
+        
+            //Le damos el regalo
+            result = playerReceiver.receivePresent(t);
+        
+        } 
+        
+       //Devolvemos el resultado
+        return result;
+        
+    }
+    //FIN EXAMEN
+    
+    
 }

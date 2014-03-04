@@ -5,7 +5,6 @@
  *  2013 © Copyleft - All Wrongs Reserved
  *
  *  Ernesto Serrano <erseco@correo.ugr.es>
- *  Noureddine El Alaoui <nourdine@correo.ugr.es>
  * 
  */
 package napakalaki;
@@ -550,4 +549,17 @@ public class Player {
     public String getName() {
         return this.name;
     }
+    
+    //EXAMEN
+    public String receivePresent(Treasure t) {
+
+        //Agregamos el tesoro
+        this.hiddenTreasures.add(t);
+        
+        //Damos las gracias
+        return this.name + " dice: Muchas Gracias!!";
+    }
+    
+    
+    //FIN EXAMEN
 }
