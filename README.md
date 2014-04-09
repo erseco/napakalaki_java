@@ -1,4 +1,4 @@
-napakalaki_java
+Napakalaki Java
 ===============
 
-Implementación en java del juego Napakalaki para la asignatura PDOO de la UGR
+Implementacion en Java del juego Napkalaki (version de Munchkin) para la asignatura de Programación y Diseño Orientado a Objetos de la ETSIIT (UGR).
